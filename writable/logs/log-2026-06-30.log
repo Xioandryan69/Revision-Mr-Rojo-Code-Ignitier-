@@ -636,3 +636,42 @@ in SYSTEMPATH/Database/Config.php on line 70.
 12 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
 13 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
 14 SYSTEMPATH/rewrite.php(44): require_once('/home/andrianandrainy/Documents/GitHub/Revision-Mr-Rojo-Code-Ignitier-/public/index.php')
+CRITICAL - 2026-06-30 19:25:39 --> Error: Call to a member function lastErrorCode() on false
+[Method: POST, Route: users/login]
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 436.
+ 1 SYSTEMPATH/Model.php(471): CodeIgniter\Database\SQLite3\Connection->error()
+ 2 SYSTEMPATH/BaseModel.php(1299): CodeIgniter\Model->doErrors()
+ 3 APPPATH/Controllers/UsersController.php(47): CodeIgniter\BaseModel->errors()
+ 4 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\UsersController->loginPost()
+ 5 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+10 SYSTEMPATH/rewrite.php(44): require_once('/home/huhu/Bureau/revision Rojo/Revision-Mr-Rojo-Code-Ignitier-/public/index.php')
+CRITICAL - 2026-06-30 19:27:13 --> Error: Call to a member function lastErrorCode() on false
+[Method: POST, Route: users/login]
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 436.
+ 1 SYSTEMPATH/Model.php(471): CodeIgniter\Database\SQLite3\Connection->error()
+ 2 SYSTEMPATH/BaseModel.php(1299): CodeIgniter\Model->doErrors()
+ 3 APPPATH/Controllers/UsersController.php(47): CodeIgniter\BaseModel->errors()
+ 4 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\UsersController->loginPost()
+ 5 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+10 SYSTEMPATH/rewrite.php(44): require_once('/home/huhu/Bureau/revision Rojo/Revision-Mr-Rojo-Code-Ignitier-/public/index.php')
+CRITICAL - 2026-06-30 19:31:16 --> Error: Call to a member function lastErrorCode() on false
+[Method: POST, Route: users/login]
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 436.
+ 1 SYSTEMPATH/Model.php(471): CodeIgniter\Database\SQLite3\Connection->error()
+ 2 SYSTEMPATH/BaseModel.php(1299): CodeIgniter\Model->doErrors()
+ 3 APPPATH/Controllers/UsersController.php(47): CodeIgniter\BaseModel->errors()
+ 4 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\UsersController->loginPost()
+ 5 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+10 SYSTEMPATH/rewrite.php(44): require_once('/home/huhu/Bureau/revision Rojo/Revision-Mr-Rojo-Code-Ignitier-/public/index.php')

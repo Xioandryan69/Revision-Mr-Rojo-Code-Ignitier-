@@ -46,4 +46,42 @@ class UsersModel extends Model
     ];
 
     protected $skipValidation = false;
+
+    public function login($email, $password)
+    {
+        $user = $this->where('email', $email)->first();
+
+        if (!$user) {
+            return [
+                'success' => false,
+                'error' => 'Email incorrect'
+            ];
+        }
+
+        if (!password_verify($password, $user['password'])) {
+            return [
+                'success' => false,
+                'error' => 'Mot de passe incorrect'
+            ];
+        }
+
+        session()->set([
+            'id' => $user['id'],
+            'email' => $user['email'],
+            'logged_in' => true
+        ]);
+
+        return [
+            'success' => true,
+            'redirect' => '/mety'
+        ];
+    }
+
+    public function getRole($userId)
+    {
+        return $this->select('roles.name as role_name')
+            ->join('roles', 'roles.id = users.role_id')
+            ->where('users.id', $userId)
+            ->first();
+    }
 }
