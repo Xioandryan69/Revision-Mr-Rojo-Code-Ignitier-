@@ -10,3 +10,5 @@ use App\Controllers\UsersController;
 $routes->get('/', 'Home::index');
 $routes->post('users/validate', 'UsersController::validateAjax');
 $routes->get('/inscription', 'UsersController::inscription');
+$routes->get('role/', 'RoleController::index');
+$routes->post('role/create', 'RoleController::create');
