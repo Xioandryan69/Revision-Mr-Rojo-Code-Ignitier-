@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Ajouter un utilisateur</title>
+    <script src="<?= base_url('assets/js/validation.js') ?>"></script>
 
     <style>
         .error {
@@ -59,50 +60,12 @@
     </form>
 
     <script>
-        const form = document.getElementById("userForm");
-
-        // Validation d'un champ
-        function validateField(field) {
-            fetch("<?= site_url('users/validate') ?>", {
-                method: "POST",
-                body: new FormData(form)
-            })
-                .then(r => r.json())
-                .then(data => {
-                    document.getElementById(field.name + "_error").innerHTML =
-                        data.errors?.[field.name] || "";
-                });
-        }
-
-        form.querySelectorAll("input,select").forEach(el => {
-            el.addEventListener(el.tagName === "SELECT" ? "change" : "input", () => validateField(el));
-        });
-
-        // Enregistrement
-        form.onsubmit = e => {
-            e.preventDefault();
-
-            fetch("<?= site_url('users/save') ?>", {
-                method: "POST",
-                body: new FormData(form)
-            })
-                .then(r => r.json())
-                .then(data => {
-
-                    document.querySelectorAll(".error").forEach(e => e.innerHTML = "");
-
-                    if (data.status) {
-                        alert(data.message);
-                        form.reset();
-                        return;
-                    }
-
-                    for (let key in data.errors) {
-                        document.getElementById(key + "_error").innerHTML = data.errors[key];
-                    }
-                });
-        };
+        initFormValidation(
+            "<?= site_url('users/validate') ?>",
+            "userForm"
+        );
     </script>
+
 
 </body>
 
