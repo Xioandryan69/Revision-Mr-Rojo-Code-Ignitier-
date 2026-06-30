@@ -41,12 +41,25 @@ class UsersController extends BaseController
         $model = new UsersModel();
         $loginResult = $model->login($data['email'], $data['password']);
         $role = $model->getRole(session()->get('id'));
+        $redirection = "";
+
+        if ($role) {
+            if ($role['role_name'] == 'admin') {
+                $redirection = '/admin/dashboard';
+            } elseif ($role['role_name'] == 'user') {
+                $redirection = '/user/dashboard';
+            } elseif ($role['role_name'] == 'rh') {
+                $redirection = '/rh/dashboard';
+            } else {
+                $redirection = 'users/logout';
+            }
+        }
 
         if ($loginResult['success']) {
             return $this->response->setJSON([
                 'success' => true,
                 'errors' => [],
-                'redirect' => '/mety'
+                'redirect' => $redirection
             ]);
         }
 

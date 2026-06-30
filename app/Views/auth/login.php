@@ -27,7 +27,7 @@
 
     <form id="loginForm">
 
-        <input type="text" name="username" placeholder="Nom d'utilisateur" required>
+        <input type="email" name="email" placeholder="Email" required>
 
         <input type="password" name="password" placeholder="Mot de passe" required>
 

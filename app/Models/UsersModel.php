@@ -58,7 +58,8 @@ class UsersModel extends Model
             ];
         }
 
-        if (!password_verify($password, $user['password'])) {
+        // if (!password_verify($password, $user['password'])) {
+        if ($password !== $user['password']) {
             return [
                 'success' => false,
                 'error' => 'Mot de passe incorrect'
@@ -79,8 +80,8 @@ class UsersModel extends Model
 
     public function getRole($userId)
     {
-        return $this->select('roles.name as role_name')
-            ->join('roles', 'roles.id = users.role_id')
+        return $this->select('role.name as role_name')
+            ->join('role', 'role.id = users.role_id')
             ->where('users.id', $userId)
             ->first();
     }
