@@ -12,7 +12,7 @@ class RoleModel extends Model
     protected $allowFields = ['name'];
 
     protected $validationRules = [
-        'name' => 'required|min_length[3]|max_length[5]|is_unique[Role.name.id,{id}]'
+        'name' => 'required|min_length[3]|max_length[5]|is_unique[Role.name,id,{id}]'
     ];
 
     protected $validationMessages = [
