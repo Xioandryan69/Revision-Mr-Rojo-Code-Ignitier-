@@ -1,15 +1,16 @@
-<?php 
-namespace App\Model;
+<?php
 
-use codeIgnitier\Model;
+namespace App\Models;
+
+use CodeIgniter\Model;
 
 class RoleModel extends Model
 {
-    protected $table ="Role";
-    
-    protected $primaryKey='id';
+    protected $table = "Role";
 
-    protected $allowFields=['name'];
+    protected $primaryKey = 'id';
+
+    protected $allowFields = ['name'];
 
 
 }
