@@ -40,6 +40,7 @@ class AuthFilter implements FilterInterface
                         default:      return redirect()->to(site_url('users/login'));
                     }
                 }
+                //lol
 
 
 
