@@ -22,9 +22,27 @@ class AuthFilter implements FilterInterface
                 $userId=$session->get('id');
                 $user= new UsersModel();
                 $userRole= $user->getRole($userId);
-                if(!in_array($userRole,$arguments)){
-                    return redirect()->to('/dashboard')->with('error', 'Accès non autorisé.');
+
+                $role =$userRole['role_name'] ;
+
+                $allowedRoles = [];
+                foreach ($arguments as $arg) {
+                    foreach (explode(',', $arg) as $r) {
+                        $allowedRoles[] = trim($r);
+                    }
                 }
+                if (!in_array($role, $allowedRoles, true)) {
+
+                    switch ($role) {
+                        case 'admin': return redirect()->to(site_url('admin/dashboard'));
+                        case 'rh':    return redirect()->to(site_url('rh/dashboard'));
+                        case 'user':    return redirect()->to(site_url('rh/dashboard'));
+                        default:      return redirect()->to(site_url('users/login'));
+                    }
+                }
+
+
+
             }
         
     }
