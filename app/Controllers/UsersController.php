@@ -6,6 +6,10 @@ use App\Models\UsersModel;
 
 class UsersController extends BaseController
 {
+    public function index()
+    {
+        return view('user/dashboard');
+    }
     public function validateAjax()
     {
         $model = new UsersModel();
@@ -67,5 +71,11 @@ class UsersController extends BaseController
             'success' => false,
             'errors' => $loginResult['error']
         ]);
+    }
+
+    public function logout()
+    {
+        session()->destroy();
+        return redirect()->to(site_url('users/login'));
     }
 }

@@ -14,15 +14,16 @@ $routes->get('role/', 'RoleController::index');
 $routes->post('role/create', 'RoleController::create');
 $routes->get('users/login', 'UsersController::login');
 $routes->post('users/login', 'UsersController::loginPost');
+$routes->get('logout', 'UsersController::logout');
 
 
 
-$routes->group('admin', ['filter' => 'auth:admin'], function($routes) {
+$routes->group('admin', ['filter' => 'auth:admin'], function ($routes) {
     $routes->get('dashboard', 'AdminController::index');
 });
-$routes->group('rh', ['filter' => 'auth:rh'], function($routes) {
+$routes->group('rh', ['filter' => 'auth:rh'], function ($routes) {
     $routes->get('dashboard', 'RhController::index');
 });
-$routes->group('user', ['filter' => 'auth:user'], function($routes) {
-    $routes->get('dashboard', 'UserController::index');
+$routes->group('user', ['filter' => 'auth:user'], function ($routes) {
+    $routes->get('dashboard', 'UsersController::index');
 });
