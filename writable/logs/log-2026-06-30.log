@@ -740,3 +740,7 @@ in SYSTEMPATH/Database/SQLite3/Connection.php on line 164.
 13 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
 14 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
 15 SYSTEMPATH/rewrite.php(44): require_once('/home/huhu/Bureau/revision Rojo/Revision-Mr-Rojo-Code-Ignitier-/public/index.php')
+CRITICAL - 2026-06-30 20:22:41 --> ErrorException: Cannot use App\Models\UsersModel as UsersModel because the name is already in use
+[Method: GET, Route: rh/dashboard]
+in APPPATH/Filters/AuthFilter.php on line 8.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
