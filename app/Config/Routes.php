@@ -26,3 +26,6 @@ $routes->group('rh', ['filter' => 'auth:rh'], function($routes) {
 $routes->group('user', ['filter' => 'auth:user'], function($routes) {
     $routes->get('dashboard', 'UserController::index');
 });
+$routes->get('upload', 'UploadController::index');
+
+$routes->post('upload/file', 'UploadController::uploadMedia');
