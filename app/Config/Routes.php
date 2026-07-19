@@ -19,6 +19,8 @@ $routes->post('users/login', 'UsersController::loginPost');
 
 $routes->group('admin', ['filter' => 'auth:admin'], function($routes) {
     $routes->get('dashboard', 'AdminController::index');
+    $routes->get('export', 'ExportController::index');
+    $routes->get('export/(:segment)/(:segment)', 'ExportController::download/$1/$2');
 });
 $routes->group('rh', ['filter' => 'auth:rh'], function($routes) {
     $routes->get('dashboard', 'RhController::index');

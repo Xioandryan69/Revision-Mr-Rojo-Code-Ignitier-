@@ -85,4 +85,5 @@ class UsersModel extends Model
             ->where('users.id', $userId)
             ->first();
     }
+
 }
